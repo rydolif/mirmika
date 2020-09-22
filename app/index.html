@@ -7,9 +7,10 @@
 	<title>Start Optimazed</title>
 	<meta name="description" content="Startup HTML Optimized">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/dest/preview.jpg">
+	<link rel="icon" href="img/favicon.png">
+	<meta property="og:image" content="img/dest/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
 
@@ -18,8 +19,8 @@
 	<header class="header">
 		<div class="header__container container">
 
-			<a href="/" class="header__logo header__logo">
-				<img src="img/logo.svg" alt="logo">
+			<a href="/" class="header__logo">
+				<img src="img/dest/header__logo.png" alt="logo">
 			</a>
 
 			<button class="hamburger" type="button">
@@ -28,27 +29,64 @@
 				</span>
 			</button>
 
-			<nav class="nav">
+			<nav class="header__nav">
 				<ul>
-					<li><a href="index.html">Головна</a></li>
-					<li><a href="catalog.html">Наші послуги</a></li>
-					<li><a href="about.html">Виконанні роботи</a></li>
-					<li><a href="contacts.html">Контакти</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Этапы</a></li>
+					<li><a href="#">Преимущества</a></li>
 				</ul>
 			</nav>
+
+			<a href="#" class="btn order__open">Написать нам</a>
 
 		</div>
 	</header>
 
-	<main class="main">
+	<section class="hero">
+		<div class="hero__slider swiper-container">
+			<div class="swiper-wrapper">
 
-		<section class="">
-			<div class="container">
-				<h1>Start</h1>
+				<div class="hero__slide swiper-slide">
+					<img src="img/dest/hero__slide.jpg" alt="">
+
+					<div class="container">
+						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
+						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
+						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
+						<a href="#" class="hero__btn btn">Консультация</a>
+					</div>
+				</div>
+
+				<div class="hero__slide swiper-slide">
+					<img src="img/dest/hero__slide.jpg" alt="">
+
+					<div class="container">
+						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
+						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
+						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
+						<a href="#" class="hero__btn btn">Консультация</a>
+					</div>
+				</div>
+
+				<div class="hero__slide swiper-slide">
+					<img src="img/dest/hero__slide.jpg" alt="">
+
+					<div class="container">
+						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
+						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
+						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
+						<a href="#" class="hero__btn btn">Консультация</a>
+					</div>
+				</div>
+
 			</div>
-		</section>
-
-	</main>
+			<div class="hero__pagination swiper-pagination"></div>
+			<div class="hero__button hero__prev"></div>
+			<div class="hero__button hero__next"></div>
+			</div>
+		</div>
+	</section>
 
 	<footer class="footer">
 		<div class="footer__container container"></div>

@@ -1,7 +1,5 @@
 @import base
 
-// CUSTOM USER STYLES & IMPORTS
-
 
 .container
 	width: 100%
@@ -27,32 +25,161 @@
 	top: 0
 	right: 0
 	left: 0
+	background-color: #ffffff
+	z-index: 1000
 
 	&__container
 		+between
 
 	&__logo
+		display: block
+		width: 215px
+
 		img
-			width: 130px
+			width: 100%
 			height: auto
 
+	&__nav
+		ul
+			+between
 
-.nav
-	ul
-		+between
+		li
+			margin-right: 55px
 
-	li
-		margin-right: 25px
+			&:last-child
+				margin-right: 0
 
-		&:last-child
-			margin-right: 0
+		a
+			position: relative
+			display: block
+			padding: 33px 0
+			font-size: 18px
+			font-weight: 400
+			color: $text
+
+			&:hover,
+			&:focus
+				color: $accent
+				
+				&::before
+					width: 100%
+
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				display: block
+				height: 3px
+				width: 0
+				background-color: $accent
+				+transition
 
 
-.main
-	+cover
+
+
+.hero
+	margin-top: 91px
+
+	img
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		min-width: 100%
+		min-height: 100%
+		z-index: -1
+
+	&__slide
+		padding-top: 240px
+		padding-bottom: 310px
+		overflow: hidden
+		text-align: center
+
+	&__title
+		color: #ffffff
+		font-weight: 800
+		font-size: 65px
+		margin-bottom: 30px
+
+	&__subtitle
+		font-size: 20px
+		color: #ffffff
+		text-transform: uppercase
+
+	&__btn
+		height: 70px
+		margin: 50px auto 0
+		font-size: 18px
+		font-weight: 600
+		width: 240px
+
+	&__pagination
+		bottom: 50px !important
+
+		span
+			width: 17px
+			height: 17px
+			border-radius: 50%
+			border: 1px solid rgba(#fff, 0.5)
+			background-color: transparent
+			opacity: 1
+			margin: 0 6px !important
+			+transition
+
+		.swiper-pagination-bullet-active
+			background-color: $accent
+			border-color: $accent
+
+	&__button
+		position: absolute
+		top: 50%
+		transform: translate(0, -50%)
+		height: 100px
+		width: 100px
+		border-radius: 50%
+		background-color: #ffffff
+		z-index: 100
+		+transition
+
+		&:hover
+			background-color: $accent
+
+			&::before
+				+transition
+				border-color: #fff
+
+		&::after
+			display: none
+		
+		&::before
+			content: ''
+			position: absolute
+			top: 50%
+			display: block
+			width: 13px
+			height: 13px
+			border-top: 1px solid #262626
+			border-right: 1px solid #262626
+
+	&__prev
+		left: -50px
+
+		&::before
+			left: 65px
+			transform: translate(0, -35%) rotate(-135deg)
+
+	&__next
+		right: -50px
+
+		&::before
+			left: 25px
+			transform: translate(0, -35%) rotate(45deg)
+
 
 
 .footer
+	height: 500px
+
 	&__container
 
 
