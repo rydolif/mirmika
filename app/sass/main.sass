@@ -27,7 +27,7 @@
 	left: 0
 	background-color: #ffffff
 	z-index: 1000
-	box-shadow: 0 0 5px 0 rgba(#000, .5)
+	+transition
 
 	&__container
 		+between
@@ -74,6 +74,13 @@
 				width: 0
 				background-color: $accent
 				+transition
+
+	&--active
+		box-shadow: 0 0 5px 0 rgba(#000, .5)
+
+		.header__nav
+			a
+				padding: 20px 0
 
 
 .hero
@@ -181,6 +188,9 @@
 	margin-bottom: 25px
 	color: $title
 
+	b
+		color: $accent
+
 
 .about
 	padding: 135px 0
@@ -246,6 +256,7 @@
 
 
 .engineering
+	overflow: hidden
 	padding-top: 115px
 	padding-bottom: 130px
 
@@ -256,12 +267,15 @@
 	&__list
 		display: flex
 		flex-wrap: wrap
+		margin-bottom: 130px
 
 		&_item
 			display: flex
 			align-items: flex-start
 			width: 24%
-			margin-bottom: 50px
+
+			&:nth-child(-n+4)
+				margin-bottom: 50px
 			
 			p
 				font-size: 14px
@@ -270,9 +284,290 @@
 			img
 				margin-right: 15px
 				margin-top: 5px
+
+	&__slider
+
+		&_nav
+			display: flex
+			align-items: center
+			margin-bottom: 50px
+
+		&_pagination
+			font-weight: 700
+			font-size: 18px
+			margin-right: 40px
+			width: 60px !important
+
+		&_button
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			border: 1px solid #000
+			margin-right: 20px
+			background-size: 70%
+			background-repeat: no-repeat
+			background-position: center
+			background-image: url(../img/dest/engineering__icon-arrow.svg)
+			+transition
+
+			&:hover,
+			&:focus
+				opacity: 1
 		
+		&_prev
+			transform: rotate(-180deg)
+
+		.swiper-button-disabled
+			opacity: 0.5
+
+		&_slide
+
+		&_img
+			overflow: hidden
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-bottom: 25px
+			max-width: 360px
+			max-height: 315px
+			border-radius: 10px
+
+			img
+				width: auto
+				max-width: 200%
+				border-radius: 10px
+
+		&_title
+			margin-bottom: 15px
+			font-weight: 700
+			font-size: 18px
+
+		&_desc
+			height: 65px
+			color: #858585
+			font-size: 14px
+			margin-bottom: 20px
+		
+		&_modal
+			position: relative
+			color: $accent
+			
+			&:hover,
+			&:focus
+				color: $accent
+				
+				&::before
+					width: 100%
+
+			&::before
+				content: ''
+				position: absolute
+				top: 100%
+				display: block
+				height: 1px
+				width: 0
+				background-color: $accent
+				+transition
 
 
+.consultation
+	padding: 115px 0
+	+cover
+	background-image: url(../img/dest/consultation__bg.jpg)
+	text-align: center
+	color: #fff
+
+	&__title
+		@extend .title
+		font-size: 40px
+		color: #ffffff
+
+	&__desc
+		margin-bottom: 40px
+	
+	&__btn
+		@extend .btn
+		border: 1px solid #fff
+		height: 70px
+		margin: 0 auto
+		font-size: 18px
+		font-weight: 600
+
+		&:hover,
+		&:focus
+			border: 1px solid #fff
+			box-shadow: 0 0 15px 0 rgba(#fff, .5)
+
+	&__form
+		margin: 0 auto
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+
+		p
+			margin-right: 25px
+
+			&:last-child
+				margin-right: 0
+				margin-bottom: 0
+			
+		input
+			height: 70px
+			background-color: transparent
+			border-radius: 50px
+			text-align: center
+			font-size: 18px
+			font-weight: 600
+			color: #ffffff
+
+			&::placeholder
+				font-size: 18px
+				font-weight: 600
+				color: #ffffff
+
+		&_button
+			@extend .btn
+			background-image: none
+			background-color: #ffffff
+			color: $accent
+			border: none
+			height: 70px
+			width: 240px
+			font-size: 18px
+			font-weight: 600
+
+			&:hover,
+			&:focus
+				background-color: #ffffff
+				color: $accent
+				box-shadow: 0 0 15px 0 rgba(#fff, .5)
+
+
+
+.investor
+
+	&__container
+		display: flex
+
+	&__content
+		width: 50%
+		padding-top: 170px
+		padding-bottom: 150px
+
+	&__title
+		@extend .title
+
+	&__desc
+		margin-bottom: 40px
+
+	&__btn
+		@extend .btn
+		background-color: transparent
+		background-image: none
+		border: 1px solid $accent
+		height: 70px
+		font-size: 18px
+		font-weight: 600
+		color: $accent
+
+		&:hover,
+		&:focus
+			border: 1px solid $accent
+
+	&__img
+		display: flex
+		justify-content: flex-end
+		align-items: flex-end
+		width: 50%
+
+		img
+			max-width: 100%
+
+
+.step
+	padding-top: 115px
+	padding-bottom: 150px
+	background-color: #F8F8F8
+
+	&__title
+		@extend .title
+		margin-bottom: 30px
+		text-align: center
+
+	&__desc
+		text-align: center
+		margin-bottom: 65px
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: -15px
+		
+		&_item
+			background-color: #ffffff
+			width: 22.5%
+			margin: 15px
+			border-radius: 5px
+			padding: 35px 15px 40px 15px
+			box-shadow: 0 0 15px 0 rgba(#000, .25)
+			+transition
+
+			&:hover
+				background-color: $accent
+				color: #ffffff
+
+				.step__list
+					&_number
+						opacity: 0.3
+					
+					&_text
+						color: #ffffff
+
+		&_number
+			margin-bottom: 10px
+			color: #f2f2f2
+			font-size: 60px
+			line-height: .85
+			font-weight: 700
+			font-family: Roboto, sans-serif
+			+transition
+
+		&_title
+			font-size: 16px
+			margin-bottom: 20px
+
+		&_text
+			color: #858585
+			font-size: 14px
+			line-height: 1.4
+			+transition
+
+
+.house
+	padding: 115px
+	+cover
+	background-image: url(../img/dest/house__bg.jpg)
+	text-align: center
+	color: #fff
+
+	&__title
+		@extend .title
+		font-size: 40px
+		color: #ffffff
+
+	&__desc
+		margin-bottom: 50px
+	
+	&__btn
+		@extend .btn
+		height: 70px
+		margin: 0 auto
+		font-size: 18px
+		font-weight: 600
+
+		&:hover,
+		&:focus
+			box-shadow: 0 0 15px 0 rgba(#fff, .5)
 
 
 .footer

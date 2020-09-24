@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-//----------------------SLIDER-----------------------
+//----------------------SLIDER-hero----------------------
 	var mySwiper = new Swiper('.hero__slider', {
 		loop: true,
 		pagination: {
@@ -10,6 +10,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		navigation: {
 			nextEl: '.hero__next',
 			prevEl: '.hero__prev',
+		},
+	});
+
+//----------------------SLIDER-hero----------------------
+	var mySwiper = new Swiper('.engineering__slider', {
+		slidesPerView: 3,
+		pagination: {
+			el: '.engineering__slider_pagination',
+			type: 'fraction',
+		},
+		navigation: {
+			nextEl: '.engineering__slider_next',
+			prevEl: '.engineering__slider_prev',
 		},
 	});
 
@@ -48,20 +61,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //----------------------SCROLL-----------------------
 	const scrollTo = (scrollTo) => {
-		document.querySelectorAll('a[href^="#"').forEach(link => {
+		let list = document.querySelector(scrollTo);
+		list = '.' + list.classList[0]  + ' li a[href^="#"';
+
+		document.querySelectorAll(list).forEach(link => {
 
 			link.addEventListener('click', function(e) {
 					e.preventDefault();
 					const scrollMenu = document.querySelector(scrollTo);
-	
+
 					let href = this.getAttribute('href').substring(1);
-	
+
 					const scrollTarget = document.getElementById(href);
-	
+
 					const topOffset = scrollMenu.offsetHeight;
 					const elementPosition = scrollTarget.getBoundingClientRect().top;
 					const offsetPosition = elementPosition - topOffset;
-	
+
 					window.scrollBy({
 							top: offsetPosition,
 							behavior: 'smooth'
@@ -69,7 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		});
 	};
-	scrollTo('.scrollto');
+	scrollTo('.header__nav');
 
+//----------------------FIXED-HEADER-----------------------
+	const headerFixed = (headerFixed, headerActive) => {
+		const header =  document.querySelector(headerFixed),
+					active = headerActive.replace(/\./, '');
+
+		window.addEventListener('scroll', function() {
+			const top = pageYOffset;
+			
+			if (top >= 700) {
+				header.classList.add(active);
+			} else {
+				header.classList.remove(active);
+			}
+
+		});
+
+	};
+	headerFixed('.header', '.header--active');
 
 });
