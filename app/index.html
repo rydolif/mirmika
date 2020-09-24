@@ -29,10 +29,10 @@
 				</span>
 			</button>
 
-			<nav class="header__nav">
+			<nav class="header__nav scrollto">
 				<ul>
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Услуги</a></li>
+					<li><a href="#about">О компании</a></li>
+					<li><a href="#services">Услуги</a></li>
 					<li><a href="#">Этапы</a></li>
 					<li><a href="#">Преимущества</a></li>
 				</ul>
@@ -54,7 +54,7 @@
 						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
 						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
 						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
-						<a href="#" class="hero__btn btn">Консультация</a>
+						<a href="#" class="hero__btn btn click__open">Консультация</a>
 					</div>
 				</div>
 
@@ -65,7 +65,7 @@
 						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
 						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
 						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
-						<a href="#" class="hero__btn btn">Консультация</a>
+						<a href="#" class="hero__btn btn click__open">Консультация</a>
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 						<p class="hero__subtitle">ДОМА. ДАЧИ. БАНИ. РЕМОНТ. ЭЛЕКТРОМОНТАЖ. ВОДОСНАБЖЕНИЕ</p>
 						<h1 class="hero__title">Эксклюзивные дома в формате “под ключ” по цене квартиры</h1>
 						<p class="hero__subtitle">Строительство любых объектов из сендвич-панелей</p>
-						<a href="#" class="hero__btn btn">Консультация</a>
+						<a href="#" class="hero__btn btn click__open">Консультация</a>
 					</div>
 				</div>
 
@@ -84,11 +84,10 @@
 			<div class="hero__pagination swiper-pagination"></div>
 			<div class="hero__button hero__prev"></div>
 			<div class="hero__button hero__next"></div>
-			</div>
 		</div>
 	</section>
 
-	<section class="about">
+	<section class="about" id="about">
 		<div class="about__container container">
 			
 			<div class="about__desc">
@@ -123,7 +122,7 @@
 		</div>
 	</section>
 
-	<section class="services">
+	<section class="services" id="services">
 		<div class="services__container container">
 
 			<h2 class="services__title">Наши усуги</h2>
@@ -206,6 +205,62 @@
 				</div>
 
 			</div>
+
+		</div>
+	</section>
+
+	<section class="engineering">
+		<div class="container">
+
+			<h2 class="engineering__title">Наши инжиниринговые услуги</h2>
+
+			<div class="engineering__list">
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon1.svg" alt="">
+					<p>Поиск участка <br>под строительство</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon2.svg" alt="">
+					<p>
+						Подготовка и согласование 
+						<br>проектов планировки терр. 
+						<br>(ППТ) и проектов межевания 
+						<br>территории (ПМТ);
+					</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon3.svg" alt="">
+					<p>Определение границ <br>земляных участков</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon4.svg" alt="">
+					<p>Проектирование</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon1.svg" alt="">
+					<p>Получ. разрешения <br>на строительство</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon2.svg" alt="">
+					<p>Получение технических <br>условий</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon3.svg" alt="">
+					<p>Ввод объекта <br>в эксплуатацию и др</p>
+				</div>
+
+				<div class="engineering__list_item">
+					<img src="img/dest/engineering__icon4.svg" alt="">
+					<p>Консультирование</p>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
@@ -213,10 +268,10 @@
 		<div class="footer__container container"></div>
 	</footer>
 
-	<div class="modal" id="order">
-		<form action="sendmail.php" class="form" method="post">
+	<div class="modal modal__order">
+		<form action="sendmail.php" class="modal__form form" method="post">
 
-			<button class="close order_close" type="button">
+			<button class="close modal__close" type="button">
 				<span></span>
 				<span></span>
 			</button>
@@ -236,7 +291,30 @@
 		</form>
 	</div>
 
-	<div class="modal" id="thanks">
+	<div class="modal modal__click">
+		<form action="sendmail.php" class="modal__form form" method="post">
+
+			<button class="close modal__close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+
+			<h3>Оставьте заявку, <br>мы свяжемся с Вами</h3>
+			<input type="hidden" name="subject" value="Узнать подробнее!">
+
+			<div class="">
+				<input type="text" name="name" placeholder="Имя" required>
+			</div>
+			<div class="">
+				<input type="tel" name="phone" placeholder="Телефон" required>
+			</div>
+			<div class="">
+				<button type="submit" class="btn" name="submit">Отправить</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="modal">
 		<button class="close thanks_close" type="button">
 			<span></span>
 			<span></span>
