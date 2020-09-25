@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	modals('.consultation__open', '.modal--consultation', '.modal--consultation .modal__close');
 	modals('.services__open', '.modal--services', '.modal--services .modal__close');
 	modals('.investor__open', '.modal--investor', '.modal--investor .modal__close');
+	modals('.thanks__open', '.modal--thanks', '.modal--thanks .modal__close');
 
 //----------------------SCROLL-----------------------
 	const scrollTo = (scrollTo) => {
