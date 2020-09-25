@@ -6,30 +6,14 @@
 	top: 50%
 	left: 50%
 	transform: translate(-50%, -50%)
-	width: 101vw
-	height: 101vh
+	width: 110vw
+	height: 110vh
 	padding: 30px
 	z-index: 10000
 	background-color: rgba(#000, .5)
 
-	&__open
-		overflow: hidden
-		display: flex
-
-	&__form
+	&--open
 		position: relative
-		margin: 20px 0
-		z-index: 1
-		box-shadow: 0 0 16px rgba(0, 0, 0, 0.29)
-		border-radius: 20px
-		background-color: #fff
-		width: 480px
-		text-align: center
-		padding: 30px
-
-	h3
-		justify-content: flex-start
-		margin-bottom: 50px
 
 	&__close
 		position: absolute
@@ -43,6 +27,13 @@
 		cursor: pointer
 		transition: all .6s
 		background-color: #fff
+
+		+r(576)
+			width: 30px
+			height: 30px
+			top: -15px
+			right: -15px
+			box-shadow: 0 0 15px 0 rgba(#000, .7)
 
 		&:hover,
 		&:focus
@@ -69,3 +60,34 @@
 			&:last-child
 				transform: translate(-50%, -50%) rotate(-45deg)
 
+	&__form
+		position: relative
+		margin: 20px 0
+		z-index: 1
+		box-shadow: 0 0 16px rgba(0, 0, 0, 0.29)
+		border-radius: 20px
+		background-color: #fff
+		width: 440px
+		text-align: center
+		padding: 30px
+
+	&__title
+		margin-bottom: 20px
+
+	&__line
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 20px
+
+		&:last-child
+			margin-bottom: 0
+		
+	&__input
+		border-radius: 50px
+
+	&__btn
+		@extend .btn
+		width: 100%
+		min-width: 100%
+		border-color: $accent

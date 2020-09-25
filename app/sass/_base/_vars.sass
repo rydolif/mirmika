@@ -24,6 +24,9 @@ body
 	flex-direction: column
 	justify-content: space-between
 
+	+r(1200)
+		font-size: 14px
+
 ::selection
 	background-color: $accent
 	color: #fff
@@ -51,7 +54,7 @@ p
 
 a,
 button
-	+transition
+	transition: all .6s
 
 	&:focus,
 	&:hover,
@@ -59,3 +62,7 @@ button
 		text-decoration: none
 		border: none
 		outline: none
+
+br
+	+r(1200)
+		display: none

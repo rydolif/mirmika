@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //----------------------SLIDER-hero----------------------
 	var mySwiper = new Swiper('.engineering__slider', {
-		slidesPerView: 3,
+		slidesPerView: 1,
+		spaceBetween: 15,
 		pagination: {
 			el: '.engineering__slider_pagination',
 			type: 'fraction',
@@ -24,6 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			nextEl: '.engineering__slider_next',
 			prevEl: '.engineering__slider_prev',
 		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 40
+			},
+		}
 	});
 
 
@@ -39,25 +50,27 @@ document.addEventListener("DOMContentLoaded", function() {
 					e.preventDefault();
 				}
 				modal.style.display = 'flex';
-				document.body.classList.add('modal__open')
+				document.body.classList.add('modal--open')
 			});
 		})
 
 		close.addEventListener('click', () => {
 			modal.style.display = 'none';
-			document.body.classList.remove('modal__open');
+			document.body.classList.remove('modal--open');
 		});
 
 		modal.addEventListener('click', (e) => {
 			if (e.target === modal) {
 				modal.style.display = 'none';
-				document.body.classList.remove('modal__open');
+				document.body.classList.remove('modal--open');
 			}
 		});
 
 	};
-	modals('.order__open', '.modal__order', '.modal__order .modal__close');
-	modals('.click__open', '.modal__click', '.modal__click .modal__close');
+	modals('.order__open', '.modal--order', '.modal--order .modal__close');
+	modals('.consultation__open', '.modal--consultation', '.modal--consultation .modal__close');
+	modals('.services__open', '.modal--services', '.modal--services .modal__close');
+	modals('.investor__open', '.modal--investor', '.modal--investor .modal__close');
 
 //----------------------SCROLL-----------------------
 	const scrollTo = (scrollTo) => {
@@ -74,7 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 					const scrollTarget = document.getElementById(href);
 
-					const topOffset = scrollMenu.offsetHeight;
+					// const topOffset = scrollMenu.offsetHeight;
+					const topOffset = 70;
 					const elementPosition = scrollTarget.getBoundingClientRect().top;
 					const offsetPosition = elementPosition - topOffset;
 
@@ -82,10 +96,20 @@ document.addEventListener("DOMContentLoaded", function() {
 							top: offsetPosition,
 							behavior: 'smooth'
 					});
+
+					
+					let button = document.querySelector('.hamburger'),
+							nav = document.querySelector('.header__nav'),
+							header = document.querySelector('.header');
+
+					button.classList.remove('hamburger--active');
+					nav.classList.remove('header__nav--active');
+					header.classList.remove('header--menu');
 			});
 		});
 	};
 	scrollTo('.header__nav');
+	scrollTo('.footer__nav');
 
 //----------------------FIXED-HEADER-----------------------
 	const headerFixed = (headerFixed, headerActive) => {
@@ -95,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.addEventListener('scroll', function() {
 			const top = pageYOffset;
 			
-			if (top >= 700) {
+			if (top >= 90) {
 				header.classList.add(active);
 			} else {
 				header.classList.remove(active);
@@ -105,5 +129,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	};
 	headerFixed('.header', '.header--active');
+
+//----------------------HAMBURGER-----------------------
+	const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
+		const button = document.querySelector(hamburgerButton),
+					nav = document.querySelector(hamburgerNav),
+					header = document.querySelector(hamburgerHeader);
+
+		button.addEventListener('click', (e) => {
+			button.classList.toggle('hamburger--active');
+			nav.classList.toggle('header__nav--active');
+			header.classList.toggle('header--menu');
+		});
+
+	};
+	hamburger('.hamburger', '.header__nav', '.header');
 
 });
