@@ -121,6 +121,7 @@
 
 		&_btn
 			display: none
+			margin: 0 auto
 
 			+r(390)
 				display: flex !important
@@ -152,28 +153,36 @@
 		margin-top: 70px
 
 	img
+		display: none
+
+	.container
 		position: absolute
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
-		min-width: 100%
-		min-height: 100%
-		z-index: -1
-
-	&__slide
-		padding-top: 240px
-		padding-bottom: 310px
-		overflow: hidden
+		z-index: 2
 		text-align: center
 
+	&__slide
+		+cover
+		display: flex
+		justify-content: center
+		align-items: center
+		overflow: hidden
+		height: 915px !important
+
+
 		+r(1200)
-			padding: 140px 0
+			height: 800px !important
+
+		+r(992)
+			height: 700px !important
 
 		+r(767)
-			padding: 100px 0
+			height: 600px !important
 
 		+r(480)
-			padding: 70px 0
+			height: 400px !important
 
 	&__title
 		color: #ffffff
@@ -470,6 +479,7 @@
 				margin-top: 5px
 
 	&__slider
+		font-size: 14px
 
 		&_nav
 			display: flex
@@ -539,15 +549,13 @@
 			font-weight: 700
 			font-size: 18px
 
-		&_desc
-			min-height: 65px
-			color: #858585
+		p
 			font-size: 14px
 			margin-bottom: 20px
-		
-		&_modal
+
+		a
 			position: relative
-			color: $accent
+			color: $accent !important
 			
 			&:hover,
 			&:focus
